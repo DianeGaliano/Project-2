@@ -1,6 +1,7 @@
 {
   "name": "project-2",
   "version": "1.0.0",
+
   "description": "",
   "main": "server.js",
   "scripts": {
@@ -11,11 +12,13 @@
     "type": "git",
     "url": "git+https://github.com/DianeGaliano/Project-2.git"
   },
-  "author": "Travis Saucedo",
+  "author": "Diane Galiano, Travis Saucedo, Alfredo Zavaleta",
+
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/DianeGaliano/Project-2/issues"
   },
+
   "homepage": "https://github.com/DianeGaliano/Project-2#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
