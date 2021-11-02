@@ -8,12 +8,12 @@ Customer.hasMany(CarInfo, {
 });
 
 Customer.hasOne(Company, {
-  foreignKey: "",
+  foreignKey: "company_id",
   onDelete: "CASCADE",
 });
 
 Company.belongsTo(Customer, {
-  foreignKey: "",
+  foreignKey: "company_id",
 });
 
 CarInfo.belongsTo(Customer, {
