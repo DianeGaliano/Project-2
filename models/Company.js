@@ -1,4 +1,4 @@
-const { Model, DataTypes } = require("sequelize");
+const { UUIDV4, Model, DataTypes } = require("sequelize");
 const bcrypt = require("bcrypt");
 const sequelize = require("../config/connection");
 
@@ -34,7 +34,15 @@ Company.init(
       validate: {
         len: [8],
       },
-    }, 
+    },
+    employee_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: false,
+      validate: {
+        len: [4],
+      },
+    },
   },
   {
     hooks: {
