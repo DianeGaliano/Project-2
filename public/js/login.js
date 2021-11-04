@@ -5,19 +5,19 @@ const loginHandler = async (event) => {
   const password = document.querySelector("#password-login").value.trim();
   const empId = document.querySelector("#emp-login").value.trim();
 
-  if (email && password) {
-    const response = await fetch("/api/cust/login", {
-      method: "POST",
-      body: JSON.stringify({ email, password }),
-      headers: { "Content-Type": "application/json" },
-    });
+  // if (email && password) {
+  //   const response = await fetch("/api/cust/login", {
+  //     method: "POST",
+  //     body: JSON.stringify({ email, password }),
+  //     headers: { "Content-Type": "application/json" },
+  //   });
 
-    if (response.ok) {
-      document.location.replace("/custprof");
-    } else {
-      alert(response.statusText);
-    }
-  }
+  //   if (response.ok) {
+  //     document.location.replace("/custprof");
+  //   } else {
+  //     alert(response.statusText);
+  //   }
+  // }
 
   if (email && password && empId) {
     const response = await fetch("/api/comp/login", {
@@ -42,19 +42,19 @@ const signupHandler = async (event) => {
   const password = document.querySelector("#password-signup").value.trim();
   const empId = document.querySelector("#emp-signup").value.trim();
 
-  if (name && email && password) {
-    const response = await fetch("/api/cust", {
-      method: "POST",
-      body: JSON.stringify({ name, email, password }),
-      headers: { "Content-Type": "application/json" },
-    });
+  // if (name && email && password) {
+  //   const response = await fetch("/api/cust", {
+  //     method: "POST",
+  //     body: JSON.stringify({ name, email, password }),
+  //     headers: { "Content-Type": "application/json" },
+  //   });
 
-    if (response.ok) {
-      document.location.replace("/custprof");
-    } else {
-      alert(response.statusText);
-    }
-  }
+  //   if (response.ok) {
+  //     document.location.replace("/custprof");
+  //   } else {
+  //     alert(response.statusText);
+  //   }
+  // }
 
   if (name && email && password && empId) {
     const response = await fetch("/api/comp", {

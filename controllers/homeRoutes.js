@@ -41,12 +41,30 @@ router.get("/carinfo/:id", async (req, res) => {
       ...car,
       logged_in: req.session.logged_in,
     });
-  } catch (err) {}
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 //router.get("/custprof", withAuth, async (req, res) => {});
 
-router.get("/compprof", withAuth, async (req, res) => {});
+router.get("/compprof", withAuth, async (req, res) => {
+  try {
+    const compData = await Company.findByPk(req.session.company_id, {
+      attributes: { exculde: ["password"] },
+      include: [{ model: CarInfo }],
+    });
+
+    const user = compData.get({ plain: true });
+
+    res.render("profile", {
+      ...user,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 router.get("/login", (req, res) => {
   if (req.session.logged_in) {

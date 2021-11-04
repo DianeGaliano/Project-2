@@ -23,10 +23,10 @@ CarInfo.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    customer_id: {
+    company_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: "customer",
+        model: "company",
         key: "id",
       },
       allowNull: true,
