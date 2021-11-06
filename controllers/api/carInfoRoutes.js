@@ -44,6 +44,7 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  console.log(req.body);
   try {
     const newCar = await CarInfo.create({
       ...req.body,
