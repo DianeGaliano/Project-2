@@ -7,4 +7,9 @@ const companyRoutes = require("./companyRoutes");
 router.use("/comp", companyRoutes);
 router.use("/carInfo", carInfoRoutes);
 
+router.post("/new/testColor", (req, res) => {
+  console.log(req.body);
+  res.json("cats");
+});
+
 module.exports = router;

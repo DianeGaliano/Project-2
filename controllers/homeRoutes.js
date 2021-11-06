@@ -45,6 +45,9 @@ router.get("/carinfo/:id", async (req, res) => {
 });
 
 //router.get("/custprof", withAuth, async (req, res) => {});
+router.get("/testRoute", (req, res) => {
+  res.render("test");
+});
 
 router.get("/compprof", withAuth, async (req, res) => {});
 
