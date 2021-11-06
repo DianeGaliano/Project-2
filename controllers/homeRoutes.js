@@ -24,6 +24,10 @@ router.get("/", async (req, res) => {
   }
 });
 
+router.get("/layoutTest", (req, res) => {
+  res.render("test");
+});
+
 router.get("/carinfo/:id", async (req, res) => {
   try {
     const carData = await CarInfo.findByPk(req.params.id, {
