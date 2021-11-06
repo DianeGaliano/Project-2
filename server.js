@@ -3,8 +3,8 @@ const express = require("express");
 const session = require("express-session");
 const exphbs = require("express-handlebars");
 const routes = require("./controllers");
-const helper = require("./utils/dateandtime");
-const boostrap = require('bootstrap');
+const helpers = require("./utils/dateandtime");
+// const boostrap = require('bootstrap');
 
 const sequelize = require("./config/connection");
 const SequelizeStore = require("connect-session-sequelize")(session.Store);
@@ -18,7 +18,7 @@ const sess = {
   secret: process.env.SUPER_SECRET || "default",
   cookie: {},
   resave: false,
-  saveUniitialized: true,
+  saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize,
   }),
