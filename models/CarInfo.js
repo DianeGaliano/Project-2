@@ -18,19 +18,25 @@ CarInfo.init(
     description: {
       type: DataTypes.STRING,
     },
+    vehicle: {
+      type: DataTypes.STRING,
+    },
+    phone: {
+      type: DataTypes.STRING,
+    },
     date_created: {
       type: DataTypes.DATE,
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    // customer_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: "customer",
-    //     key: "id",
-    //   },
-    //   allowNull: true,
-    // },
+    company_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: "company",
+        key: "id",
+      },
+      allowNull: true,
+    },
     reference_id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
