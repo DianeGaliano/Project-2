@@ -7,7 +7,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Company,
-        attributes: ["id", "name"],
+        attributes: ["id"],
       },
     ],
   })
@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/", (req, res) => {
+router.get("/:id", (req, res) => {
   CarInfo.findOne({
     where: {
       id: req.params.id,
@@ -26,7 +26,7 @@ router.get("/", (req, res) => {
     include: [
       {
         model: Company,
-        attributes: ["id", "category_name"],
+        attributes: ["id"],
       },
     ],
   })
@@ -43,20 +43,20 @@ router.get("/", (req, res) => {
     });
 });
 
-router.post("/", withAuth, async (req, res) => {
+router.post("/", async (req, res) => {
   try {
     const newCar = await CarInfo.create({
       ...req.body,
       company_id: req.session.company_id,
     });
-
+    console.log(newCar);
     res.status(200).json(newCar);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-router.put("/:id", withAuth, async (req, res) => {
+router.put("/:id", async (req, res) => {
   CarInfo.update(
     { description: req.body.description },
     {
@@ -71,7 +71,7 @@ router.put("/:id", withAuth, async (req, res) => {
     });
 });
 
-router.delete("/:id", withAuth, async (req, res) => {
+router.delete("/:id", async (req, res) => {
   try {
     const carData = await CarInfo.destroy({
       where: {

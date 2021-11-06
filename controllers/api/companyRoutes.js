@@ -4,16 +4,20 @@ const withAuth = require("../../utils/auth");
 
 router.post("/", async (req, res) => {
   try {
-    const compData = await Company.create(req.body);
+    const compData = await Company.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+      employee_id: req.body.employee_id,
+    });
 
     req.session.save(() => {
-      req.session.company_id = compData.id;
       req.session.logged_in = true;
 
       res.status(200).json(compData);
     });
   } catch (err) {
-    res.status(400).json(err);
+    res.status(500).json(err);
   }
 });
 
