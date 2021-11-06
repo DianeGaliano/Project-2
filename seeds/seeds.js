@@ -2,7 +2,7 @@ const sequelize = require("../config/connection");
 const { Company, CarInfo } = require("../models");
 
 const companyData = require("./companyData.json");
-const carinfoData = require("./carinfoData.json");
+const carinfoData = require("./carInfoData.json");
 
 const seedDatabase = async () => {
   await sequelize.sync({ force: true });
