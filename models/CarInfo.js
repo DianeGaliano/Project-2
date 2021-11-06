@@ -21,12 +21,15 @@ CarInfo.init(
     },
     description: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     vehicle: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     phone: {
       type: DataTypes.STRING,
+      allowNull: false,
     },
     date_created: {
       type: DataTypes.DATE,
