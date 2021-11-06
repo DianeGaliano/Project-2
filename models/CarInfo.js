@@ -23,14 +23,14 @@ CarInfo.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    customer_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: "customer",
-        key: "id",
-      },
-      allowNull: true,
-    },
+    // customer_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: "customer",
+    //     key: "id",
+    //   },
+    //   allowNull: true,
+    // },
     reference_id: {
       type: DataTypes.UUID,
       defaultValue: DataTypes.UUIDV4,
