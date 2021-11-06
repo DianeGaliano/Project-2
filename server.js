@@ -17,7 +17,7 @@ const sess = {
   secret: process.env.SUPER_SECRET || "default",
   cookie: {},
   resave: false,
-  saveUniitialized: true,
+  saveUninitialized: true,
   store: new SequelizeStore({
     db: sequelize,
   }),
