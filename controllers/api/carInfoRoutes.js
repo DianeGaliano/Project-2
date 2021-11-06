@@ -50,18 +50,21 @@ router.post("/", withAuth, async (req, res) => {
       company_id: req.session.company_id,
     });
 
-    res.status(200).json(newProject);
+    res.status(200).json(newCar);
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
 router.put("/:id", withAuth, async (req, res) => {
-  CarInfo.update(req.body, {
-    where: {
-      id: req.params.id,
-    },
-  })
+  CarInfo.update(
+    { description: req.body.description },
+    {
+      where: {
+        id: req.params.id,
+      },
+    }
+  )
     .then((updatedCars) => res.json(updatedCars))
     .catch((err) => {
       res.status(400).json(err);
