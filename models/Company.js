@@ -47,7 +47,7 @@ Company.init(
   {
     hooks: {
       beforeCreate: async (newCustData) => {
-        newCustData.password = await bcrypt.hash(newUserData.password, 10);
+        newCustData.password = await bcrypt.hash(newCustData.password, 10);
         return newCustData;
       },
       beforeUpdate: async (updatedCustData) => {
