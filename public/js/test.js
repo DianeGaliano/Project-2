@@ -1,6 +1,6 @@
 console.log("yo");
 
-function sendColor() {
+function sendInfo() {
   fetch("/api/carInfoRoutes", {
     method: "POST",
     headers: {
@@ -12,5 +12,4 @@ function sendColor() {
   });
 }
 
-
-document.getElementById("btn").addEventListener("click", sendColor);
+document.getElementById("btn").addEventListener("click", sendInfo);
