@@ -15,7 +15,7 @@
         <a class="pure-menu-heading" href="">Vehicle Repairs Tracker</a>
 
         <ul class="pure-menu-list">
-            <li class="pure-menu-item pure-menu-selected"><a href="#" class="pure-menu-link">Home</a></li>
+            <li class="pure-menu-item pure-menu-selected"><a href="/homepage" class="pure-menu-link">Home</a></li>
             <li class="pure-menu-item"><a href="/cars" class="pure-menu-link">Vehicles</a></li>
             {{#if logged_in}}
             <li class="pure-menu-item"><button class="btn" id="logout" class="pure-menu-link">Logout</button>></li>
@@ -28,18 +28,7 @@
 <main class="splash-container">
     {{{ body}}}
 
-{{!-- </main>
-<div class="splash-container">
-    <div class="splash">
-        <h1 class="splash-head">Welcome to Vehicle Repair Tracker! </h1>
-        <p class="splash-subhead">
-            Login in to view current vehicles.
-        </p>
-        <p>
-            <a href="/login" class="pure-button pure-button-primary">View Vehicles</a>
-        </p>
-    </div>
-</div> --}}
+</main>
     {{#if logged_in}}
     <script src="/js/logout.js"></script>
     {{/if}}
