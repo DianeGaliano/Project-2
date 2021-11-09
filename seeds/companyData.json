@@ -2,16 +2,19 @@
   {
     "name": "Sal",
     "email": "sal@company.com",
-    "password": "Password1"
+    "password": "Password1",
+    "employee_id": "4575"
   },
   {
     "name": "Felix",
     "email": "felix@company.com",
-    "password": "ThePassword"
+    "password": "ThePassword",
+    "employee_id": "4555"
   },
   {
     "name": "Mikayla",
     "email": "mikayla@company.com",
-    "password": "Prettyword1"
+    "password": "Prettyword1",
+    "employee_id": "4515"
   }
 ]
