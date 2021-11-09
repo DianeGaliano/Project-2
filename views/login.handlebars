@@ -1,17 +1,48 @@
-<h2>Login</h2>
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/pure-min.css" integrity="sha384-Uu6IeWbM+gzNVXJcM9XV3SohHtmWE+3VGi496jvgX1jyvDTXfdK+rfZc8C1Aehk5" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.6/build/grids-responsive-min.css">
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css">
+    <link rel="stylesheet" href="/public/css/style.css">
+<div class="content">
+    <h2 class="content-head is-center">Vehicle Tracker Login</h2>
+{{!-- Login --}}
+    <div class="pure-g">
+        <div class="l-box-lrg pure-u-1 pure-u-md-2-5">
+            <form class="pure-form pure-form-stacked">
+                <fieldset>
 
-<form class="form login-form">
-  <div class="form-group">
-    <label for="email-login">email:</label>
-    <input class="form-input" type="text" id="email-login" />
-  </div>
-  <div class="form-group">
-    <label for="password-login">password:</label>
-    <input class="form-input" type="password" id="password-login" />
-  </div>
-  <div class="form-group">
-    <button class="btn btn-primary" type="submit">login</button>
-  </div>
-</form>
+                    <label for="name">Your Name</label>
+                    <input id="name" type="text" placeholder="Your Name">
 
-<script src="/js/login.js"></script>
+
+                    <label for="email">Your Email</label>
+                    <input id="email" type="email" placeholder="Your Email">
+
+                    <label for="password">Your Password</label>
+                    <input id="password" type="password" placeholder="Your Password">
+
+
+                    <button type="submit" class="pure-button">: Login</button>
+                </fieldset>
+            </form>
+        </div>
+{{!-- Sign Up --}}
+        <div class="l-box-lrg pure-u-1 pure-u-md-3-5">
+            <form class="pure-form pure-form-stacked">
+                <fieldset>
+
+                    <label for="name">Your Name</label>
+                    <input id="name" type="text" placeholder="Your Name">
+
+
+                    <label for="email">Your Email</label>
+                    <input id="email" type="email" placeholder="Your Email">
+
+                    <label for="password">Your Password</label>
+                    <input id="password" type="password" placeholder="Your Password">
+
+                    <button type="submit" class="pure-button">: Sign Up</button>
+                </fieldset>
+            </form>
+        </div>
+    </div>
+<script src="./js/login.js"></script>
