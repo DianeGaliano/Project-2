@@ -17,6 +17,8 @@ router.post("/", async (req, res) => {
 
     console.log("COMPDATA ID", compData.id);
 
+    //test
+
     req.session.save(() => {
       req.session.logged_in = true;
       req.session.company_id = compData.id;
