@@ -59,6 +59,7 @@ router.get("/carinfo/:id", async (req, res) => {
 
 router.get("/compprof", withAuth, async (req, res) => {
   try {
+    console.log(req.session);
     const compData = await Company.findByPk(req.session.company_id, {
       attributes: { exculde: ["password"] },
       include: [{ model: CarInfo }],
@@ -66,11 +67,12 @@ router.get("/compprof", withAuth, async (req, res) => {
 
     const user = compData.get({ plain: true });
 
-    res.render("profile", {
+    res.render("cars", {
       ...user,
       logged_in: true,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
