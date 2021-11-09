@@ -1,6 +1,6 @@
 const loginHandler = async (event) => {
   event.preventDefault();
-
+  const displayMessage = document.querySelector("#response-message");
   const email = document.querySelector("#email-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
   const employee_id = parseInt(
@@ -27,11 +27,12 @@ const loginHandler = async (event) => {
       body: JSON.stringify({ email, password, employee_id }),
       headers: { "Content-Type": "application/json" },
     });
-
+    const responseMessage = await response.json();
     if (response.ok) {
+      displayMessage.textContent = responseMessage.message;
       document.location.replace("/compprof");
     } else {
-      alert(response.statusText);
+      displayMessage.textContent = responseMessage.message;
     }
   }
 };
