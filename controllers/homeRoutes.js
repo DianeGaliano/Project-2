@@ -4,7 +4,7 @@ const withAuth = require("../utils/auth");
 
 router.get("/", async (req, res) => {
   try {
-    const carData = await CarInfo.findall({
+    const carData = await CarInfo.findAll({
       include: [
         {
           model: Company,
@@ -12,6 +12,7 @@ router.get("/", async (req, res) => {
         },
       ],
     });
+    console.log(carData);
 
     const cars = carData.map((car) => car.get({ plain: true }));
 
@@ -20,13 +21,14 @@ router.get("/", async (req, res) => {
       logged_in: req.session.logged_in,
     });
   } catch (err) {
+    console.log(err);
     res.status(500).json(err);
   }
 });
 
-router.get("/layoutTest", (req, res) => {
-  res.render("test");
-});
+// router.get("/layoutTest", (req, res) => {
+//   res.render("test");
+// });
 
 router.get("/carinfo/:id", async (req, res) => {
   try {
@@ -51,9 +53,9 @@ router.get("/carinfo/:id", async (req, res) => {
 });
 
 //router.get("/custprof", withAuth, async (req, res) => {});
-router.get("/testRoute", (req, res) => {
-  res.render("test");
-});
+// router.get("/testRoute", (req, res) => {
+//   res.render("test");
+// });
 
 router.get("/compprof", withAuth, async (req, res) => {
   try {
