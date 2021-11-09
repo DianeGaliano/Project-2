@@ -1,1 +1,23 @@
-{}
+[
+  {
+    "first_name": "Frank",
+    "last_name": "Kennedy",
+    "phone": "555-587-2221",
+    "vehicle": "2019 Ford Taurus",
+    "description": "Description of work being done"
+  },
+  {
+    "first_name": "Emily",
+    "last_name": "Hardt",
+    "phone": "555-514-4282",
+    "vehicle": "2020 Jeep Cherokee",
+    "description": "Description of work being done"
+  },
+  {
+    "first_name": "Wesley",
+    "last_name": "Montgomery",
+    "phone": "555-542-9942",
+    "vehicle": "2015 Ford Mustang",
+    "description": "Description of work being done"
+  }
+]
