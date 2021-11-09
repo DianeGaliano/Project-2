@@ -1,6 +1,7 @@
 const loginHandler = async (event) => {
   event.preventDefault();
   const displayMessage = document.querySelector("#response-message");
+  console.log("it's this one", displayMessage);
   const email = document.querySelector("#email-login").value.trim();
   const password = document.querySelector("#password-login").value.trim();
   const employee_id = parseInt(
@@ -28,6 +29,7 @@ const loginHandler = async (event) => {
       headers: { "Content-Type": "application/json" },
     });
     const responseMessage = await response.json();
+    console.log(responseMessage);
     if (response.ok) {
       displayMessage.textContent = responseMessage.message;
       document.location.replace("/compprof");
