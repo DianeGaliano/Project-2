@@ -13,9 +13,10 @@ const seedDatabase = async () => {
   });
 
   for (const carinfo of carinfoData) {
-    await carinfo.create({
+    await CarInfo.bulkCreate({
       ...carinfo,
-      user_id: users[Math.floor(Math.random() * users.length)].id,
+      employee_id:
+        companyData[Math.floor(Math.random() * companyData.length)].id,
     });
   }
 

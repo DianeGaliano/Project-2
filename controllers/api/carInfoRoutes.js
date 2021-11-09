@@ -2,7 +2,7 @@ const router = require("express").Router();
 const { CarInfo, Company } = require("../../models");
 const withAuth = require("../../utils/auth");
 
-router.get("/", (req, res) => {
+router.get("/", withAuth, (req, res) => {
   CarInfo.findAll({
     include: [
       {
@@ -18,7 +18,7 @@ router.get("/", (req, res) => {
     });
 });
 
-router.get("/:id", (req, res) => {
+router.get("/:id", withAuth, (req, res) => {
   CarInfo.findOne({
     where: {
       id: req.params.id,
@@ -57,7 +57,7 @@ router.post("/", async (req, res) => {
   }
 });
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", withAuth, async (req, res) => {
   CarInfo.update(
     { description: req.body.description },
     {
@@ -72,7 +72,7 @@ router.put("/:id", async (req, res) => {
     });
 });
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", withAuth, async (req, res) => {
   try {
     const carData = await CarInfo.destroy({
       where: {

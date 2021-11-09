@@ -11,36 +11,53 @@ router.post("/", async (req, res) => {
       employee_id: req.body.employee_id,
     });
 
+    const { name, email, employee_id } = compData;
+
+    const userData = { name, email, employee_id };
+
     req.session.save(() => {
       req.session.logged_in = true;
-
-      res.status(200).json(compData);
+      req.session.company_id = compData.id;
+      res.status(200).json(userData);
     });
   } catch (err) {
-    res.status(500).json(err);
+    console.log(err);
+    res.status(500);
   }
 });
 
 router.post("/login", async (req, res) => {
   try {
-    const compData = await Company.findOne;
-    ({ where: { email: req.body.email } });
-
-    if (!compData) {
+    const compData = await Company.findOne({
+      where: { email: req.body.email },
+    });
+    // console.log(compData);
+    // debugger;
+    if (req.body.employee_id !== compData.employee_id) {
       res
         .status(404)
         .json({ message: "Incorrect email or password, please try again." });
       return;
     }
+    if (!compData.checkPassword(req.body.password)) {
+      res
+        .status(404)
+        .json({ message: "Incorrect email or password, please try again." });
+      return;
+    }
+    const { name, email, employee_id } = compData;
+
+    const userData = { name, email, employee_id };
 
     req.session.save(() => {
       req.session.company_id = compData.id;
       req.session.logged_in = true;
 
-      res.json({ user: compData, message: "You are now logged in!" });
+      res.json({ user: userData, message: "You are now logged in!" });
     });
   } catch (err) {
-    res.status(400).json(err);
+    console.log(err);
+    res.status(400);
   }
 });
 
