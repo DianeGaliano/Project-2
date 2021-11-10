@@ -2,10 +2,6 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    /*
-    * -- BASE STYLES --
-    * Most of these are inherited from Base, but I want to change a few.
-    */
 }
 .car {
     color:white;
@@ -136,10 +132,6 @@
         height: auto;
     }
     
-    /*
-    * -- LAYOUT STYLES --
-    * These are some useful classes which I will need
-    */
     .l-box {
         padding: 1em;
         
@@ -274,9 +266,51 @@
         border-radius: 5px;
         line-height: 1em;
     }
+    .splash-subhead {
+        color: white;
+        letter-spacing: 0.05em;
+        opacity: 0.8;
+    }
+    .splash-container2 {        
+        background: #767f85;
+        z-index: 1;
+        overflow: hidden;
+        /* The following styles are required for the "scroll-over" effect */
+        width: 100%;
+        height: 25%;
+        top: 0;
+        left: 0;
+        position: relative;
+        
+    }
+    
+    .splash2 {
+        /* absolute center .splash within .splash-container */
+        width: 80%;
+        height: 50%;
+        margin: auto;
+        position: absolute;
+        top: 100px; left: 0; bottom: 0; right: 0;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    
+    /* This is the main heading that appears on the blue section */
+    .splash-head2 {
+        background: #2d3e50;
+        font-size: 20px;
+        font-weight: bold;
+        color: white;
+        border: 3px solid white;
+        padding: 1em 1.6em;
+        font-weight: 100;
+        border-radius: 5px;
+        line-height: 1em;
+    }
+    
     
     /* This is the subheading that appears on the blue section */
-    .splash-subhead {
+    .splash-subhead2 {
         color: white;
         letter-spacing: 0.05em;
         opacity: 0.8;
