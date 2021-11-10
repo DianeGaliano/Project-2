@@ -57,10 +57,15 @@ You and your group will use everything you've learned over the past six units to
 The following project was created with 
 * [Javascript](https://www.javascript.com/)
 * [Node.js](https://nodejs.org/en/)
+* [Connect-Session-Sequelize](https://www.npmjs.com/package/connect-session-sequelize)
+* [Session-Sequelize](https://www.npmjs.com/package/express-session)
 * [Sequelize](https://www.npmjs.com/package/sequelize)
 * [MySQL2](https://www.npmjs.com/package/mysql2)
 * [Express](https://www.npmjs.com/package/express)
+* [Express-Handlebars](https://www.npmjs.com/package/express-handlebars)
 * [Dotenv](https://www.npmjs.com/package/dotenv)
+* [Bcrypt Package](https://www.npmjs.com/package/bcrypt)
+
 
 ## Usage
 Getting started:
