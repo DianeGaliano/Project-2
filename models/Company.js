@@ -13,7 +13,7 @@ Company.init(
     id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
+      primaryKey: false,
       autoIncrement: true,
     },
     name: {
@@ -39,6 +39,7 @@ Company.init(
       type: DataTypes.INTEGER,
       allowNull: false,
       autoIncrement: false,
+      primaryKey: true,
       validate: {
         len: [4],
       },
