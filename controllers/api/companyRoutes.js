@@ -17,12 +17,13 @@ router.post("/", async (req, res) => {
 
     console.log("COMPDATA ID", compData.id);
 
+    //test
+
     req.session.save(() => {
       req.session.logged_in = true;
       req.session.company_id = compData.id;
       res.status(200).json(userData);
     });
-    
   } catch (err) {
     console.log(err);
     res.status(500);
