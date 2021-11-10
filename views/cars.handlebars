@@ -3,78 +3,73 @@
     <div class="splash-container">
     <div class="splash">
         <h2 class="content-head is-center">Welcome {{name}}.</h2>
-        <p class="splash-subhead">
-            Login in to view current vehicles.
-                    <ul class="pricing-table-list">
-                    {{!-- Gets Car info --}}
-                    <li>{{first_name}}</li>
-                    <li>{{last_name}}</li>
-                    <li>{{description}}</li>
-                    <li>{{vehicle}}</li>
+     
+
+
+<div class="l-content">
+    <div class="pricing-tables pure-g">
+        <div class="pure-u-1 pure-u-md-1-3">
+            <div class="pricing-table pricing-table-free">
+                <div class="pricing-table-header">
+
+                    <h2 class="car">Vehicle</h2>
+                    <span class="pricing-table-price">
+                        {{vehicle}} <span>{{employee_id}}</span>
+                    </span>
+                </div>
+
+                <ul class="pricing-table-list">
+                    <li>Customer</li>
+                    <li>{{first_name}} {{last_name}}</li>
+                    <li>Phone Number</li>
                     <li>{{phone}}</li>
-                    <li>{{date_created}}</li>
-                    <li>{{employee_id}}</li>
-                    <li>{{reference_id}}</li>
+                    <li>Description</li>
+                    <li>{{description}}</li>
                 </ul>
-        </p>
-        <p>
-            <a href="/login" class="pure-button pure-button-primary">Edit</a>
-        </p>
-    </div>
-    </div>
-</div>
-<div class="content-wrapper">
-    <div class="content">
-        <h2 class="content-head is-center">Welcome {{name}}.</h2>
 
-        <div class="pure-g">
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-
-                <h3 class="content-subhead">
-
+                <button class="button-choose pure-button">Edit</button>
             </div>
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
-                    <i class="fa fa-mobile"></i>
-                    Responsive Layouts
-                </h3>
-                <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-                </p>
+        </div>
+        <div class="pure-u-1 pure-u-md-1-3">
+            <div class="pricing-table pricing-table-biz pricing-table-selected">
+                <div class="pricing-table-header">
+                    <h2 class="car">Vehicle</h2>
+                    <span class="pricing-table-price">
+                        {{vehicle}} <span>{{employee_id}}</span>
+                    </span>
+                </div>
+
+                <ul class="pricing-table-list">
+                    <li>Customer</li>
+                    <li>{{first_name}} {{last_name}}</li>
+                    <li>Phone Number</li>
+                    <li>{{phone}}</li>
+                    <li>Description</li>
+                    <li>{{description}}</li>
+                </ul>
+                <button class="button-choose pure-button">Edit</button>
             </div>
-            <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-                <h3 class="content-subhead">
-                    <i class="fa fa-th-large"></i>
-                    Modular
-                </h3>
-                <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-            </p>
         </div>
-        <div class="l-box pure-u-1 pure-u-md-1-2 pure-u-lg-1-4">
-            <h3 class="content-subhead">
-                <i class="fa fa-check-square-o"></i>
-                Plays Nice
-            </h3>
-            <p>
-                    Phasellus eget enim eu lectus faucibus vestibulum. Suspendisse sodales pellentesque elementum.
-            </p>
-        </div>
-    </div>
-</div>
-<div class="ribbon l-box-lrg pure-g">
-        <div class="l-box-lrg is-center pure-u-1 pure-u-md-1-2 pure-u-lg-2-5">
-            <img width="300" alt="File Icons" class="pure-img-responsive" src="https://dingmans.com/wp-content/uploads/2019/08/nissan-certified-collision-repair-car-lineup-1024x242-1.png">
-        </div>
-        <div class="pure-u-1 pure-u-md-1-2 pure-u-lg-3-5">
+           <div class="pure-u-1 pure-u-md-1-3">
+            <div class="pricing-table pricing-table-biz pricing-table-selected">
+                <div class="pricing-table-header">
+                    <h2 class="car">Vehicle</h2>
+                    <span class="pricing-table-price">
+                        {{vehicle}} <span>{{employee_id}}</span>
+                    </span>
+                </div>
 
-            <h2 class="content-head content-head-ribbon">Laboris nisi ut aliquip.</h2>
-
-            <p>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                consequat. Duis aute irure dolor.
-            </p>
+                <ul class="pricing-table-list">
+                    <li>Customer</li>
+                    <li>{{first_name}} {{last_name}}</li>
+                    <li>Phone Number</li>
+                    <li>{{phone}}</li>
+                    <li>Description</li>
+                    <li>{{description}}</li>
+                </ul>
+                <button class="button-choose pure-button">Edit</button>
+            </div>
         </div>
-    </div>
+        
+    
+            
