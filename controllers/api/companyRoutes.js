@@ -31,27 +31,25 @@ router.post("/login", async (req, res) => {
     const compData = await Company.findOne({
       where: { email: req.body.email },
     });
-    // console.log(compData);
+    console.log(compData);
     // debugger;
-    if (req.body.employee_id !== compData.employee_id) {
-      res
-        .status(404)
-        .json({ message: "Incorrect email or password, please try again." });
-      return;
-    }
-    if (!compData.checkPassword(req.body.password)) {
-      res
-        .status(404)
-        .json({ message: "Incorrect email or password, please try again." });
-      return;
-    }
-    const { name, email, employee_id } = compData;
 
-    const userData = { name, email, employee_id };
+    if (compData) {
+      if (req.body.employee_id !== compData.employee_id) {
+        res
+          .status(404)
+          .json({ message: "Incorrect email or password, please try again." });
+        return;
+      }
+      if (!compData.checkPassword(req.body.password)) {
+        res
+          .status(404)
+          .json({ message: "Incorrect email or password, please try again." });
+        return;
+      }
 
-    console.log("COMPDATA ID", compData.id);
 
-    //test
+
 
     req.session.save(() => {
       req.session.company_id = compData.id;
@@ -59,7 +57,20 @@ router.post("/login", async (req, res) => {
       res.status(200).json({ user: userData, message: "You are now logged in!" });
     });
 
-    console.log("THIS IS SESSION", req.session);
+      const { name, email, employee_id } = compData;
+      const plainData = await compData.get({ plain: true });
+      const userData = { name, email, employee_id };
+      console.log("compid blah blah", plainData.id);
+      req.session.save(() => {
+        req.session.company_id = plainData.id;
+        req.session.logged_in = true;
+        res
+          .status(200)
+          .json({ user: userData, message: "You are now logged in!" });
+      });
+      console.log(req.session);
+    }
+
   } catch (err) {
     console.log(err);
     res.status(400);

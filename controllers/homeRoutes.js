@@ -61,7 +61,7 @@ router.get("/compprof", withAuth, async (req, res) => {
   try {
     console.log(req.session);
     const compData = await Company.findByPk(req.session.company_id, {
-      attributes: { exculde: ["password"] },
+      attributes: { exclude: ["password"] },
       include: [{ model: CarInfo }],
     });
 
@@ -82,8 +82,8 @@ router.get("/login", (req, res) => {
     res.redirect("/compprof");
     return;
   }
-
-  res.render("login");
+  console.log("session blah ah al lah", req.session);
+  res.render("login", { logged_in: req.session.logged_in });
 });
 
 module.exports = router;
