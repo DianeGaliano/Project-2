@@ -19,7 +19,7 @@ CarInfo.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    description: {
+    phone: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -27,7 +27,7 @@ CarInfo.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    phone: {
+    description: {
       type: DataTypes.STRING,
       allowNull: false,
     },

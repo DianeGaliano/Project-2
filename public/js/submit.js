@@ -3,11 +3,11 @@ const submitHandler = async (event) => {
   console.log("clicked");
 
   //   const submitBttn = document.querySelector("#submitBttn");
-  const first_name = document.querySelector("#first_name");
-  const last_name = document.querySelector("#last_name");
-  const phone = document.querySelector("#phone");
-  const vehicle = document.querySelector("#vehicle");
-  const description = document.querySelector("#description");
+  const first_name = document.querySelector("#first_name").value.trim();
+  const last_name = document.querySelector("#last_name").value.trim();
+  const phone = document.querySelector("#phone").value.trim();
+  const vehicle = document.querySelector("#vehicle").value.trim();
+  const description = document.querySelector("#description").value.trim();
 
   if (first_name && last_name && phone && vehicle && description) {
     const response = await fetch("/api/carInfo", {
