@@ -56,8 +56,7 @@ router.post("/login", async (req, res) => {
     req.session.save(() => {
       req.session.company_id = compData.id;
       req.session.logged_in = true;
-
-      res.json({ user: userData, message: "You are now logged in!" });
+      res.status(200).json({ user: userData, message: "You are now logged in!" });
     });
 
     console.log("THIS IS SESSION", req.session);

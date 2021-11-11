@@ -36,11 +36,11 @@ CarInfo.init(
       allowNull: false,
       defaultValue: DataTypes.NOW,
     },
-    employee_id: {
+    company_id: {
       type: DataTypes.INTEGER,
       references: {
         model: "company",
-        key: "employee_id",
+        key: "id",
       },
       allowNull: true,
     },
