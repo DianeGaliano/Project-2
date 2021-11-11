@@ -15,10 +15,6 @@ router.post("/", async (req, res) => {
 
     const userData = { name, email, employee_id };
 
-    console.log("COMPDATA ID", compData.id);
-
-    //test
-
     req.session.save(() => {
       req.session.logged_in = true;
       req.session.company_id = compData.id;
@@ -52,6 +48,15 @@ router.post("/login", async (req, res) => {
         return;
       }
 
+
+
+
+    req.session.save(() => {
+      req.session.company_id = compData.id;
+      req.session.logged_in = true;
+      res.status(200).json({ user: userData, message: "You are now logged in!" });
+    });
+
       const { name, email, employee_id } = compData;
       const plainData = await compData.get({ plain: true });
       const userData = { name, email, employee_id };
@@ -65,6 +70,7 @@ router.post("/login", async (req, res) => {
       });
       console.log(req.session);
     }
+
   } catch (err) {
     console.log(err);
     res.status(400);

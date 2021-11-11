@@ -12,4 +12,8 @@ router.post("/new/testColor", (req, res) => {
   res.json("cats");
 });
 
+router.get("/addVehicle", (req, res) => {
+  res.render("add");
+});
+
 module.exports = router;
